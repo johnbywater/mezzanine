@@ -24,7 +24,7 @@ matrix:
       env: DJANGO="20"
   allow_failures:
     - env: DJANGO="master"
-notifications:
-  irc: "irc.freenode.org#mezzanine"
-  on_success: change
-  on_failure: change
+#notifications:
+#  irc: "irc.freenode.org#mezzanine"
+#  on_success: change
+#  on_failure: change
