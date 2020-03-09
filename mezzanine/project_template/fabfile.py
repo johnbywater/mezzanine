@@ -71,8 +71,7 @@ env.num_workers = conf.get("NUM_WORKERS",
 env.secret_key = conf.get("SECRET_KEY", "")
 env.nevercache_key = conf.get("NEVERCACHE_KEY", "")
 
-if not env.secret_key and \
-        os.environ.get("DJANGO_SETTINGS_MODULE", "") != "docs_settings":
+if not env.secret_key:
     print("Aborting, no SECRET_KEY setting defined.")
     exit()
 
@@ -273,7 +272,7 @@ def rsync_upload():
     """
     excludes = ["*.pyc", "*.pyo", "*.db", ".DS_Store", ".coverage",
                 "local_settings.py", "/static", "/.git", "/.hg"]
-    local_dir = "'%s%s'" % (os.getcwd(), os.sep)
+    local_dir = os.getcwd() + os.sep
     return rsync_project(remote_dir=env.proj_path, local_dir=local_dir,
                          exclude=excludes)
 
