@@ -3,6 +3,7 @@ env:
   - DJANGO="111"
   - DJANGO="20"
   - DJANGO="21"
+  - DJANGO="22"
   - DJANGO="master"
 python:
   - "3.5"
